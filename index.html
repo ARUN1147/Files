@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing number</title>
+    <style>
+        body{
+            width: 100%;
+            min-height: 100vh;
+            background-color: rgb(156, 152, 152);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .container{
+            width: 600px;
+            height: auto;
+            background: rgba(0, 0, 0, 0.932);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            border-radius: 25px;
+            box-shadow: 1px 2px 12px 5px rgba(5, 5, 5, 0.603);
+
+
+        }
+        .container input{
+            padding: 10px 50px;
+            margin-top: 5px;
+            border: none;
+            outline: none;
+        }
+        .container label{
+            margin-top: 5%;
+        }
+        .container button{
+            padding: 5px 35px;
+            margin-top: 5%;
+            border: none;
+            border-bottom: none;
+            font-size: medium;
+            color: black;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: 1s;
+        }
+        .container button:hover{
+            background-color: black;
+            color: white;
+            border: 1px solid green;
+            transition: 1s;
+        }
+        .result{
+            width: 80%;
+            height: 400px;
+            color: aliceblue;
+        }
+        ::placeholder{
+            text-align: center;
+        }
+        .output{
+            font-size: xx-large;
+            font-weight: 800;
+            color: green;
+        }
+        .btn{
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+            <h1>The Number Magic</h1>
+    <div class="container">
+
+        <h1>Step 1: Choss a Number Under 1-9,</h1>
+        <h1>step 2: Multiple by 2,</h1>
+        <h1>step 3: Add 10 with Total Number,</h1>
+        <h1>step 4: Divide it by 2,</h1>
+        <label for="">After Divide By 2 Enter The Value At Below & Click Button</label>
+        <input type="number" placeholder="Enter the Number" class="getvalue">
+        <button onclick="convert()">Guess</button>
+
+        <div class="result">
+            <h1>The Number is</h1>
+            <p class="output"></p>
+            <button class="btn">Play again</button>
+        </div>
+       
+
+
+    </div>
+
+    <script>
+        function convert(){
+            let getoutput = document.querySelector('.getvalue').value
+            let getresult = document.querySelector('.output')
+
+            let guess = (getoutput-5);
+
+            if (guess<0) {
+                getresult.innerHTML="Your Calculation is Wrong please Play Again"
+            }else{
+                getresult.innerHTML=guess;
+            }
+            
+            
+
+        }
+
+        let getbtn = document.querySelector(".btn")
+        getbtn.addEventListener("click",()=>{
+            location.reload();
+        })
+        
+    </script>
+
+</body>
+</html>
+    <!-- //take a number undar 1 to 9 -->
+    <!-- multiply by 2 -->
+    <!-- add10 with total number -->
+    <!-- divide it by 2 -->
